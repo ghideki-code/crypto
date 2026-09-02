@@ -523,6 +523,60 @@
     /* menu vira uma folha fixa que cabe na largura (não vaza pela esquerda) */
     .ind-menu{position:fixed;top:52px;left:8px;right:8px;min-width:0}
   }
+
+/* ===== VISUAL V2 — camada de apresentação, sem alterar a lógica/indicadores ===== */
+:root{
+  --ink:#0e1015; --panel:#181b22; --panel-2:#12151b; --hair:#2a2e39;
+  --hair-2:#3a404d; --txt:#d9dce5; --muted:#9198a8; --muted-2:#626978;
+  --bull:#089981; --bear:#f23645; --btc:#2962ff; --draw:#42a5f5;
+  --draw-fill:rgba(41,98,255,.14); --card-bg:#181b22; --card-bg2:#181b22;
+  --svg-bg:#11141a; --card-shadow:none; --tip-bg:#20232c;
+}
+body{background:#0e1015!important;color:var(--txt)!important}
+header{
+  min-height:48px!important;padding:6px 12px!important;gap:6px 12px!important;
+  background:#181b22!important;border-bottom:1px solid #2a2e39!important;
+  box-shadow:none!important
+}
+.brand{font-size:13px!important;letter-spacing:.15px!important;color:#fff!important}
+.brand .dot{width:10px!important;height:10px!important;border-radius:50%!important;background:#2962ff!important;box-shadow:0 0 0 3px rgba(41,98,255,.15)!important}
+.brand small{font-size:10px!important;color:#a9b0bf!important}
+.ticker .asset-sel,.hsel,.ind-btn,.icon-btn{
+  background:transparent!important;border-color:transparent!important;border-radius:5px!important;
+  box-shadow:none!important
+}
+.ticker .asset-sel{padding:5px 7px!important;color:#fff!important}.hsel{padding:5px 7px!important}
+.ticker .asset-sel:hover,.hsel:hover,.ind-btn:hover,.icon-btn:hover{background:#2a2e39!important;border-color:#2a2e39!important}
+.ind-btn.active,.icon-btn.active{color:#6ba4ff!important;background:rgba(41,98,255,.16)!important}
+.icon-btn{width:30px!important;height:28px!important}.ctrls{gap:2px!important}
+.row{gap:0!important;padding:0!important;background:#0e1015!important}
+.stage{
+  border:0!important;border-radius:0!important;background:#0e1015!important;box-shadow:none!important
+}
+.sidepanel{flex-basis:310px!important;width:310px!important;background:#181b22!important;border-left:1px solid #2a2e39!important}
+.side-inner{width:310px!important;padding:12px!important;gap:10px!important}
+.side-inner>div{background:#181b22!important}
+.cyclebox,.mtfob,.patternbox,.fgbox{
+  background:#181b22!important;border:1px solid #2a2e39!important;border-radius:6px!important;
+  box-shadow:none!important
+}
+.cyclebox:hover,.mtfob:hover,.patternbox:hover,.fgbox:hover{border-color:#465064!important}
+.ind-menu{
+  margin-top:5px!important;background:#20232c!important;border:1px solid #3a404d!important;
+  border-radius:7px!important;box-shadow:0 12px 28px rgba(0,0,0,.4)!important
+}
+.ind-menu-title{background:#20232c!important}.ind-row{border-radius:4px!important}.ind-row:hover{background:#2a2e39!important}
+.ma-chip{border-color:#3a404d!important;border-radius:4px!important;background:#181b22!important}
+.ma-chip.on{background:#252b38!important;border-color:#526891!important}
+#chart{background:#0e1015!important}
+button,.asset-sel,select{transition:background .12s ease,color .12s ease,border-color .12s ease!important}
+button:hover,.asset-sel:hover,select:hover{transform:none!important}
+.status .led.live{box-shadow:0 0 7px var(--bull)!important}
+@media(max-width:800px){
+ header{min-height:43px!important;padding:4px 8px!important}.row{padding:0!important}
+ .sidepanel{flex-basis:286px!important;width:286px!important}.side-inner{width:286px!important;padding:8px!important}
+}
+
 </style>
 </head>
 <body>
@@ -3597,3 +3651,5 @@ $('#cycleDays').addEventListener('change', syncCycle);
 </script>
 </body>
 </html>
+
+
