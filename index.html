@@ -523,6 +523,46 @@
     /* menu vira uma folha fixa que cabe na largura (não vaza pela esquerda) */
     .ind-menu{position:fixed;top:52px;left:8px;right:8px;min-width:0}
   }
+
+/* ===== VISUAL V2 — camada de apresentação, sem alterar a lógica/indicadores ===== */
+:root{
+  --ink:#080a0f; --panel:#10131b; --panel-2:#0c0f16; --hair:#202633;
+  --hair-2:#303948; --txt:#f2f5fa; --muted:#909aab; --muted-2:#626d80;
+  --bull:#22c99a; --bear:#ff5d73; --btc:#f5a524; --draw:#4b93ff;
+  --card-bg:rgba(16,19,27,.94); --card-bg2:rgba(16,19,27,.96);
+  --svg-bg:#0b0e14; --card-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+body{background:radial-gradient(ellipse at top,#111827 0%,var(--ink) 38%)!important}
+header{
+  min-height:52px!important;padding:7px 16px!important;gap:8px 14px!important;
+  background:rgba(16,19,27,.88)!important;backdrop-filter:blur(18px);
+  border-bottom-color:rgba(255,255,255,.09)!important
+}
+.brand{font-size:13px!important;letter-spacing:.1px!important}.brand .dot{width:10px!important;height:10px!important;border-radius:3px!important}
+.ticker .asset-sel,.hsel,.ind-btn,.icon-btn{
+  background:rgba(255,255,255,.035)!important;border-color:rgba(255,255,255,.09)!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.025)
+}
+.ticker .asset-sel{padding:6px 8px!important}.icon-btn{width:32px!important;height:30px!important;border-radius:9px!important}
+.row{gap:12px!important;padding:12px!important;background:transparent!important}
+.stage{border-color:rgba(255,255,255,.09)!important;border-radius:16px!important;box-shadow:0 22px 54px rgba(0,0,0,.27)!important}
+.sidepanel{flex-basis:300px!important;width:300px!important}.side-inner{width:300px!important;gap:12px!important}
+.cyclebox,.mtfob,.patternbox,.fgbox{
+  border-color:rgba(255,255,255,.09)!important;border-radius:13px!important;
+  box-shadow:var(--card-shadow)!important
+}
+.ind-menu{
+  border-color:rgba(255,255,255,.12)!important;border-radius:14px!important;
+  box-shadow:0 24px 56px rgba(0,0,0,.48)!important
+}
+.ind-row{border-radius:10px!important}.ma-chip{border-color:rgba(255,255,255,.1)!important;border-radius:9px!important}
+button,.asset-sel,select{transition:transform .15s ease,border-color .15s ease,background .15s ease!important}
+button:hover,.asset-sel:hover,select:hover{transform:translateY(-1px)}
+@media(max-width:800px){
+ header{min-height:46px!important;padding:5px 9px!important}.row{padding:7px!important;gap:7px!important}
+ .stage{border-radius:11px!important}.sidepanel{flex-basis:286px!important;width:286px!important}.side-inner{width:286px!important}
+}
+
 </style>
 </head>
 <body>
@@ -3597,3 +3637,5 @@ $('#cycleDays').addEventListener('change', syncCycle);
 </script>
 </body>
 </html>
+
+
